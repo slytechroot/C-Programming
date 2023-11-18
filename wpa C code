@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+FILE *passwords;
+
+int main(void){
+
+char filename[17]="8charlistAAA.txt";
+char password[9]="AAAAAAAA"; //Array for passwords
+//65 to 90 is ASCII uppercase chars
+int iterations1=65;  //set the iterations loop vars, start each one by default at 65 = A in ASCII
+int iterations2=65;
+int iterations3=65;
+int iterations4=65;
+int iterations5=65;
+int iterations6=65;
+int iterations7=65;
+int iterations8=65;
+
+
+printf("SKY default WPA password list creator\n--------------------------------------\n\n");
+printf("This program will generate the default sky wireless WPA keys for use with\nAircrack.\n");
+printf("Due to the massive files involved, this program will gernerate only\na setnumber of permutations in the form AAAXXXXX where AAA are user chosen.");
+printf("\n\nThe program will continue to generate all lists after the specified \nAAA until ZZZZZZZZ is reached");
+printf("\n\nFor example if you wish to generate from CBDAAAAA to ZZZZZZZZ\nthen at the prompts enter C then B then D\n\n");
+system("pause");     //Wait for user entry to continue      
+system("cls");       //clear te screen
+printf("SKY default WPA password list creator\n--------------------------------------\n\n");
+printf("Please initialize the first password character (in uppercase please): ");
+fflush(stdin);       //clear the input buffer
+scanf("%c",&password[0]);      //Read the first user character entry and store to element 0 of password array
+printf("\nPlease initialize the second password character (in uppercase please): ");
+fflush(stdin);  
+scanf("%c",&password[1]);      //Read the second user character entry and store to element 1 of password array
+printf("\nPlease initialize the second password character (in uppercase please): ");
+fflush(stdin);  
+scanf("%c",&password[2]);      //Read the third user character entry and store to element 2 of password array
+filename[9]=password[0];
+filename[10]=password[1];
+filename[11]=password[2];
+
+//the following code will loop through until all permutations are created.  Separate files will be created to limit errors and huge files.
+
+printf("\n\nPassword list %s is being created.  Please wait...\n\n",filename);       
+for(iterations1=password[0];iterations1<91;iterations1++){
+for(iterations2=password[1];iterations2<91;iterations2++){
+for(iterations3=password[2];iterations3<91;iterations3++){
+                                                 filename[9]=iterations1;
+                                                 filename[10]=iterations2;
+                                                 filename[11]=iterations3;
+                                                 if((passwords = fopen(filename, "w+"))==NULL)  //Open a new file
+                                                               {
+                                                               printf("\n\nError Creating TXT file\n\n");
+                                                               }  
+                                                 printf("\nPassword list %s created.",filename);
+for(iterations4=65;iterations4<91;iterations4++){
+for(iterations5=65;iterations5<91;iterations5++){
+for(iterations6=65;iterations6<91;iterations6++){        
+for(iterations7=65;iterations7<91;iterations7++){
+for(iterations8=65;iterations8<91;iterations8++){
+password[0]=iterations1;
+password[1]=iterations2;
+password[2]=iterations3;
+password[3]=iterations4;
+password[4]=iterations5;
+password[5]=iterations6;
+password[6]=iterations7;
+password[7]=iterations8;                                           
+fprintf(passwords,"%s\n",password);                                                                                       
+}}}}}}
+fclose(passwords);  //close the last used file
+}} 
+printf("\n\nComplete!\n\n");
+system("pause");   
+}
