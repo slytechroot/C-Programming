@@ -1,0 +1,1629 @@
+Programarea in Limbajul C
+
+ 1. Sa se scrie programul care rezolva ecuatzia de gradul I.
+
+
+#include
+#include
+
+void main(){
+float abx;
+       clrscr();
+printf(' a= ');scanf('%f'&a);
+printf(' b= ');scanf('%f'&b);
+if (a!=0){
+x=-b/a;
+printf('x= %f'x);
+}
+else
+printf('Nedeterminare ');
+getch();
+}
+
+
+2. Sa se scrie programul care rezolva ecuatia de gradul II.
+
+
+#include
+#include
+#include
+
+void main(){
+float abcx1x2delta;
+
+clrscr();
+
+printf(' a= ');scanf('%f'&a);
+printf(' b= ');scanf('%f'&b);
+printf(' c= ');scanf('%f'&c);
+
+delta=b*b-4*a*c;
+
+if (delta<0)
+printf('
+Solutziile sunt numere complexe');
+else
+if (delta==0){
+x1=x2=-b/2*a;
+printf('
+x1=x2= %f'x1);
+}
+else{
+x1=(-b+sqrt(delta))/(2*a);
+x2=(-b-sqrt(delta))/(2*a);
+printf('
+x1= %f'x1);
+printf('
+x2= %f'x2);
+}
+getch();
+}
+
+
+3. Sa se scrie un program care calculeaza factorialul unui numar introdus de la tastatura.
+
+
+Metoda I: Functzia “fact” calculeaza factorialul.
+
+
+#include
+#include
+
+int fact(int n){
+int f=1;
+
+if (n==0)
+return 1;
+
+do{
+f*=n;
+n--;
+}while(n>0);
+
+return f;
+}
+
+void main(){
+int nr;
+
+clrscr();
+
+printf('
+Introduceti numarul: ');
+scanf('%d'&nr);
+
+printf(' %d factorial este %d'nrfact(nr));
+
+getch();
+}
+
+Metoda II:Se foloseshte instructziunea “for”.
+
+
+#include
+#include
+
+void main(){
+int nfacti;
+
+clrscr();
+
+printf('Introducetzi numarul: ');scanf('%d'&n);
+
+if (n==0)
+printf('Factorialul este 1');
+else {
+fact=1;
+for (i=1;i<=n;i++)
+fact*=i;
+printf('Factorialul este %d'fact);
+}
+
+getch();
+}
+
+Metoda III: Se foloseshte instructziunea “while”.
+
+
+#include
+#include
+
+void main(){
+int nrmfact;
+
+clrscr();
+
+printf('
+Introduceti numarul: ');
+scanf('%d'&nr);
+
+m=nr;
+if (nr==0)
+fact=1;
+else{
+fact=1;
+while (nr>0){
+fact*=nr;
+nr--;
+}
+}
+
+printf('
+%d factorial este %d'mfact);
+
+getch();
+}
+
+Metoda IV: Se foloseshte o functzie recursiva.
+
+
+#include
+#include
+
+int fact(int n){
+return n>0 ? fact(n-1)*n:1;
+}
+
+void main(){
+int nr;
+
+clrscr();
+
+printf('
+Introduceti numarul: ');
+scanf('%d'&nr);
+
+printf(' %d factorial este %d'nrfact(nr));
+
+getch();
+}
+
+
+4. Se dau doua numere intregi m shi n. Sa se calculeze m*n folosind adunari repetate.
+
+
+#include
+#include
+
+void main(){
+int mnpi;
+
+clrscr();
+
+printf('m= ');
+scanf('%d'&m);
+printf('n= ');
+scanf('%d'&n);
+
+p=0;
+for (i=0;i
+p+=m;
+
+printf('%d * %d = %d 'mnp);
+
+getch();
+}
+
+
+5. Se dau doua numere intregi m shi n. Sa se calculeze m la puterea n.
+
+(folosind inmultziri repetate).
+
+#include
+#include
+
+void main(){
+int mnpi;
+
+clrscr();
+
+printf('m= ');
+scanf('%d'&m);
+printf('n= ');
+scanf('%d'&n);
+
+p=1;
+for (i=0;i
+p*=m;
+
+printf('%d la puterea %d = %d 'mnp);
+
+getch();
+}
+
+
+6. Sa se scrie un program care afisheaza maximumul dintre doua numere intregi introduse de la tastatura.
+
+
+#include
+#include
+
+void main(){
+int ab;
+
+clrscr();
+
+printf(' a= ');scanf('%d'&a);
+printf(' b= ');scanf('%d'&b);
+
+if (a>b)
+printf('Maximumul este %d'a);
+else
+printf('Maximumul este %d'b);
+
+getch();
+}
+
+
+7. Sa se scrie un program care determina daca un numar introdus de la tastatura este sau nu prim.
+
+
+#include
+#include
+
+void main(){
+int inrprim;
+
+clrscr();
+
+printf('nr= ');scanf('%d'&nr);
+
+prim=1;
+for (i=2;i<=nr/2;i++)
+if (nr%i==0){
+prim=0;
+break;
+}
+if (prim)
+printf('Numarul este prim. ');
+else
+printf('Numarul nu este prim.');
+
+getch();
+}
+
+
+8. Sa se scrie un program care afisheaza primele n numere prime (n>2 n introdus de la tastatura).
+
+
+#include
+#include
+
+void main(){
+int nijnrprim;
+
+clrscr();
+
+printf('n= ');scanf('%d'&n);
+printf(' 1 2 ');
+nr=2;
+i=3;
+
+do{
+prim=1;
+for (j=2;j<=i/2;j++)
+if (i%j==0){
+prim=0;
+break;
+}
+if (prim){
+printf('%2d 'i);
+nr++;
+}
+i++;
+}
+while (nr
+getch();
+}
+
+
+9. Se dau doua numere naturale a shi b. sa se afle cel mai mare numar de doua cifre folosind cifra unitatzilor de la cele 2 numere date.
+
+
+#include
+#include
+
+void main(){
+int abnumar;
+
+clrscr();
+
+printf('a= ');scanf('%d'&a);
+printf('b= ');scanf('%d'&b);
+
+if (a%10>b%10)
+numar=(a%10)*10+b%10;
+else
+numar=(b%10)*10+a%10;
+
+printf('Numarul cel mai mare obtzinut din cifrele unitatzilor este: %d'numar);
+getch();
+}
+
+
+10. Fie n<100 un numar natural. Sa se scrie un program care afisheaza in cuvinte numarul dat. Exemplu: 25 sa se afisheze 'douazeci shi cinci'.
+
+
+#include
+#include
+
+int zeci(int n){
+if (n>=90){
+printf('nouazeci ');
+return 1;
+}
+if (n>=80){
+printf('optzeci ');
+return 1;
+}
+if (n>=70){
+printf('saptezeci ');
+return 1;
+}
+if (n>=60){
+printf('saizeci ');
+return 1;
+}
+if (n>=50){
+printf('cincizeci ');
+return 1;
+}
+if (n>=40){
+printf('patruzeci ');
+return 1;
+}
+if (n>=30){
+printf('treizeci ');
+return 1;
+}
+if (n>=20){
+printf('douazeci ');
+return 1;
+}
+switch (n){
+case 19:printf('nouasprezece');
+break;
+
+case 18:printf('optisprezece');
+break;
+
+case 17:printf('saptesprezece');
+break;
+
+case 16:printf('saisprezece');
+break;
+
+case 15:printf('cincisprezece');
+break;
+
+case 14:printf('paisprezece');
+break;
+
+case 13:printf('treisprezece');
+break;
+
+case 12:printf('doisprezece');
+break;
+
+case 11:printf('unsprezece');
+break;
+
+case 10:printf('zece');
+break;
+}
+    return n<10 ;
+}
+
+void unitatzi(int n){
+if (n%10!=0 && n>20)
+printf('si ');
+switch (n%10){
+case 9: printf('noua');
+break;
+
+case 8: printf('opt');
+break;
+
+case 7: printf('sapte');
+break;
+
+case 6: printf('sase');
+break;
+
+case 5: printf('cinci');
+break;
+
+case 4: printf('patru');
+break;
+
+case 3: printf('trei');
+break;
+
+case 2: printf('doi');
+break;
+
+case 1: printf('unu');
+break;
+}
+}
+
+
+
+void main(){
+int n;
+
+clrscr();
+
+printf('Numarul trebuie sa fie mai mic decat 100
+');
+printf('n=');scanf('%d'&n);
+
+if (n==0)
+printf('zero');
+else
+if (zeci(n))
+unitatzi(n);
+
+getch();
+}
+
+
+11. Se da un vector de n elemente numere intregi n<=100. Sa se tipareasca valoarea maxima din vector.
+
+
+#include
+#include
+
+void main(){
+int nimaxv<100>;
+
+clrscr();
+
+printf('n = ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>= 'i);
+scanf('%d'&v);
+}
+
+max=v<0>;
+
+for (i=1;i
+if (v>max)
+max=v;
+
+printf('
+Maximul este: %d'max);
+getch();
+}
+
+
+12. Se da un vector de n elemente numere intregi n<=100. Sa se tipareasca valoarea minima din vector.
+
+
+#include
+#include
+
+void main () {
+int niminv<100>;
+
+clrscr();
+
+printf('n = ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>= 'i);
+scanf('%d'&v);
+}
+
+min=v<0>;
+
+for (i=1;i
+if (v
+min=v;
+
+printf('
+Minimul este: %d'min);
+getch();
+}
+
+
+13. Sa se scrie un program care face suma elementelor unui vector de n elemente numere intregi.
+
+
+#include
+#include
+
+void main(){
+int nisumav<100>;
+
+clrscr();
+
+printf('n= ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>='i);
+scanf('%d'&v);
+}
+
+suma=0;
+
+for (i=0;i
+
+suma+=v;
+
+printf('
+Suma elementelor este: %d'suma);
+
+getch();
+}
+
+
+14. Sa se scrie un program care calculeaza media aritmetica a n numere.
+
+
+#include
+#include
+
+void main() {
+int inv<100>;
+float masuma;
+
+clrscr();
+
+printf('n= ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>='i);
+scanf('%d'&v);
+}
+
+suma=0;
+
+for (i=0;i
+    suma+=v;
+
+ma=suma/n;
+printf('
+Media aritmetica este: %f'ma);
+
+getch();
+}
+
+
+15. Se da un vector de n elemente numere intregi n<=100. Sa se tipareasca elementele pare din vector.
+
+
+#include
+#include
+
+void main () {
+int niv<100>;
+
+clrscr();
+
+printf('n = ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>= 'i);
+scanf('%d'&v);
+}
+
+printf('
+Elementele pare din vector sunt:
+');
+for (i=0;i
+if (v%2==0)
+printf(' %d
+'v);
+getch();
+}
+
+
+16. Sa se scrie un program care afisheaza elementele impare ale unui vector de dimensiune n<=100.
+
+
+#include
+#include
+
+void main () {
+int niv<100>;
+
+clrscr();
+
+printf(' n = ');scanf('%d'&n);
+
+for (i=0;i
+printf(' v<%d>= 'i);
+scanf('%d'&v);
+}
+
+printf('
+Elementele impare din vector sunt:
+');
+for (i=0;i
+if (v%2!=0)
+printf('
+%d'v);
+getch();
+}
+
+
+17. Sa se scrie un program care afisheaza numerele negative dintr-un vector de dimensiune n<=100 in ordinea inversa a introducerii lor.
+
+
+#include
+#include
+
+void main(){
+int nv<100>i;
+
+clrscr();
+
+printf(' n= ');
+scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>='i);
+scanf('%d'&v);
+}
+
+printf('
+Elementele negative in ordine inversa sunt: ');
+
+for (i=n;i>=0;i--)
+if (v<0)
+printf('
+%d'v);
+
+getch();
+}
+
+
+18. Sa se scrie un program care afisheaza numarul de vocale dintr-un vector de dimensiune n.
+
+
+#include
+#include
+#include
+
+void main () {
+int ninr;
+char v<100>;
+
+clrscr();
+
+printf('n = ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>= 'i);
+scanf('%s'&v);
+}
+
+nr=0;
+
+for (i=0;i
+if (v=='a' || v=='e' || v=='i' || v=='o' || v=='u'
+nr++;
+
+printf('
+In vector se gasesc %d vocale'nr);
+
+getch();
+}
+
+
+19. Sa se scrie un program care verifica daca un numar introdus de la tastatura se gaseshte printre elementele unui vector de dimensiune n<=100 shi in caz afirmativ sa tipareasca pozitzia numarului in shir (cautare element cu element).
+
+
+#include
+#include
+#include
+
+void main () {
+int nmigasitv<100>;
+
+clrscr();
+
+printf(' n = ');scanf('%d'&n);
+
+for (i=0;i
+printf(' v<%d>= 'i);
+scanf('%d'&v);
+}
+
+printf(' Introducetzi numarul cautat m = ');scanf('%d'&m);
+
+gasit=0;
+
+for (i=0;i
+if (v==m){
+printf(' Numarul %d a fost gasit in pozitzia %d
+'mi);
+gasit=1;
+break;
+}
+
+if (!gasit)
+printf('
+Numarul %d nu a fost gasit in vector'm);
+
+getch();
+}
+
+
+20. Sa se scrie un program care verifica daca un numar introdus de la tastatura se gaseshte printre elementele unui vector de dimensiune n<=100 shi in caz afirmativ sa tipareasca pozitzia numarului in shir (cautare rapida prin injumatatzirea intervalului intr-un vector ordonat).
+
+
+#include
+#include
+#include
+
+void main () {
+int nnrisdmv<100>;
+
+clrscr();
+
+printf('n = ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>= 'i);
+scanf('%d'&v);
+}
+
+printf('Introducetzi numarul cautat nr = ');scanf('%d'&nr);
+
+s=0;
+d=n;
+
+do{
+m=(s+d)/2;
+if (nr)
+d=m-1;
+else
+if (nr>v)
+s=m+1;
+else{
+printf('Numarul a fost gasit in pozitzia %d 'm);
+getch();
+exit(1);
+}
+}
+while (s<=d);
+printf('Numarul nu a fost gasit in sir');
+getch();
+}
+
+
+21. Sa se scrie un program care realizeaza concatenarea a doi vectori ordonatzi crescator de dimensiune n<50 rezultand un al treilea vector ordonat crescator care contzine toate elementele celor doi vectori.
+
+
+#include
+#include
+
+void main () {
+int nijka<50>b<50>c<100>;
+
+clrscr();
+
+printf(' n = ');scanf('%d'&n);
+
+for (i=0;i
+printf(' A<%d>= 'i);
+scanf('%d'&a);
+}
+
+printf('
+');
+    /*elem vect b*/
+for (j=0;j
+printf(' B<%d>= 'j);
+scanf('%d'&b);
+}
+
+i=j=k=0;
+do{
+if (a){
+c=a;
+k++;
+i++;
+}
+else{
+c=b;
+k++;
+j++;
+}
+}
+while (i
+
+if(i
+do{
+c=a;
+k++;
+i++;
+}
+while (i
+else
+do{
+c=b;
+k++;
+j++;
+}
+while (j
+
+for (k=0;k<(n+n);k++)
+printf('
+C<%d>= %d 'kc);
+
+getch();
+}
+
+
+22. Sa se sorteze un vector cu n componente in ordinea crescatoare a elementelor prin metoda interclasarii (bulelor).
+
+
+#include
+#include
+
+void main(){
+int niminterv<100>;
+
+clrscr();
+
+printf('n= ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>='i);
+scanf('%d'&v);
+}
+
+do{
+inter=0;
+for (i=0;i
+if (v>v) {
+m=v;
+v=v;
+v=m;
+inter=1;
+}
+
+}
+while (inter==1);
+
+printf('
+Vectorul sortat crescator : ' );
+
+for (i=0;i
+printf('
+v<%d>= %d'iv);
+
+getch();
+}
+
+
+23. Sa se sorteze un vector cu n componente in ordinea crescatoare a elementelor prin metoda insertziei.
+
+
+#include
+#include
+
+int cautapoz(int iint v<100>){
+int sdm;
+
+s=0;
+d=i-1;
+
+do{
+m=(s+d)/2;
+if (v)
+d=m-1;
+else
+if (v>v)
+s=m+1;
+else
+return m;
+
+}
+while (s<=d);
+
+return s;
+}
+
+void main () {
+int nijptv<100>;
+
+clrscr();
+
+printf('n = ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>= 'i);
+scanf('%d'&v);
+}
+
+i=1;
+do{
+p=cautapoz(iv);
+t=v;
+j=i-1;
+do{
+v=v;
+j--;
+}
+while (j>=p);
+v
+
+=t;
+i++;
+}
+while (i
+
+for (i=0;i
+printf('
+v<%d>= %d'iv);
+
+
+
+getch();
+}
+
+
+24. Sa se sorteze un vector cu n componente in ordinea crescatoare a elementelor prin metoda selectziei (dupa o singura parcurgere).
+
+
+#include
+#include
+
+void main(){
+int nimjtv<100>k;
+
+clrscr();
+
+printf('n= ');scanf('%d'&n);
+
+for (i=0;i
+printf('v<%d>='i);
+scanf('%d'&v);
+}
+
+i=0;
+do{
+j=i+1;
+m=i;
+do{
+if (v)
+m=j;
+j++;
+}
+while (j
+t=v;
+v=v;
+v=t;
+
+i++;
+}
+while (i
+
+printf('
+Vectorul sortat crescator : ' );
+
+for (i=0;i
+printf('
+v<%d>= %d'iv);
+
+getch();
+}
+
+
+25. Sa se faca un program care efectueaza suma a doua matrici care au acelashi numar de linii shi coloane.
+
+
+#include
+#include
+
+void main(){
+int a<10><10>b<10><10>s<10><10>ijlc;
+
+clrscr();
+
+printf('
+Introducetzi numarul de linii: ');
+scanf('%d'&l);
+printf(' Introducetzi numarul de coloane: ');
+scanf('%d'&c);
+
+clrscr();
+
+printf('
+Introducetzi elementele matricei A:
+');
+for(i=0;i
+for(j=0;j
+printf(' A<%d><%d>= 'ij);
+scanf('%d'&a);
+}
+
+clrscr();
+
+printf('
+Introduceti elementele matricei B:
+');
+for(i=0;i
+for(j=0;j
+printf(' B<%d><%d>= 'ij);
+scanf('%d'&b);
+}
+
+for(i=0;i
+for(j=0;j
+s=a+b;
+
+clrscr();
+
+printf('
+Matricea A:
+');
+for(i=0;i
+for(j=0;j
+printf('%5d 'a);
+printf('
+');
+}
+
+printf('
+Matricea B:
+');
+for(i=0;i
+for(j=0;j
+printf('%5d 'b);
+printf('
+');
+}
+
+printf('
+Suma matricelor este:
+');
+for(i=0;i
+for(j=0;j
+printf('%5d 's);
+printf('
+');
+}
+
+getch();
+}
+
+
+26. Sa se realizeze un program care preia elementele negative dintr-o matrice shi le depune intr-un vector. Sa se afisheze acel vector.
+
+
+#include
+#include
+
+void main(){
+int m<10><10>ijlckv<100>;
+
+clrscr();
+
+printf(' Introducetzi numarul de linii: ');
+scanf('%d'&l);
+printf(' Introducetzi numarul de coloane: ');
+scanf('%d'&c);
+
+clrscr();
+
+printf('
+Introducetzi elementele matricei:
+');
+for(i=0;i
+for(j=0;j
+printf(' M<%d><%d>='ij);
+scanf('%d'&m);
+}
+
+k=0;
+for(i=0;i
+for(j=0;j
+if (m<0)
+v=m;
+
+
+clrscr();
+
+printf('Matricea introdusa a fost:
+');
+for(i=0;i
+for(j=0;j
+printf(' %5d 'm);
+printf('
+');
+}
+
+printf('
+Elementele negative introduse in vector sunt:
+');
+
+for (i=0;i
+printf(' v<%d>= %d
+'iv);
+
+getch();
+}
+
+
+27. Se da o matrice cu l linii shi c coloane (lc<=10). Sa se realizeze un program care face suma elementelor impare din matrice pe fiecare coloana.
+
+
+#include
+#include
+
+void main (){
+int lcijm<10><10>s<10>;
+
+clrscr();
+
+printf(' Introducetzi numarul de linii l= ');
+scanf('%d'&l);
+printf(' Introducetzi numarul de coloane c= ');
+scanf('%d'&c);
+
+clrscr();
+
+printf(' Introducetzi elementele matricei:
+
+');
+
+for (i=0;i
+for (j=0;j
+printf(' M<%d><%d>= 'ij);
+scanf('%d'&m);
+}
+
+for (j=0;j
+s=0;
+
+for (j=0;j
+for (i=0;i
+if (m%2!=0)
+s+=m;
+
+clrscr();
+
+printf(' Matricea introdusa :
+');
+for (i=0;i
+for (j=0;j
+printf(' %5d 'm);
+printf('
+');
+}
+
+
+printf('
+Suma elemetelor impare de pe fiecare coloana:
+');
+for (j=0;j
+printf('
+s= %d's);
+
+getch();
+}
+
+
+28. Se considera matricea A=||a|| de numere intregi cu n linii shi m coloane. (nm <=10). Sa se construiasca variabila indexata v ale carei n elemente sunt valorile minime de elemente de matrice a unde i=1..n.
+
+
+#include
+#include
+
+void main(){
+int a<10><10>ijnmv<10>mininternr;
+
+clrscr();
+
+printf(' Introducetzi numarul de linii: ');
+scanf('%d'&n);
+printf(' Introducetzi numarul de coloane: ');
+scanf('%d'&m);
+
+clrscr();
+
+printf('
+Introducetzi elementele matricei:
+');
+for(i=0;i
+for(j=0;j
+printf(' A<%d><%d>='ij);
+scanf('%d'&a);
+}
+
+
+for(i=0;i
+min=a<0>;
+for(j=1;j
+if (min>a)
+min=a;
+v=min;
+}
+
+/*indexarea crescatoare a vectorului v prin metoda interschimbarii (bulelor)*/
+do{
+inter=0;
+for (i=0;i
+if (v>v){
+nr=v;
+v=v;
+v=nr;
+inter=1;
+
+}
+}while(inter);
+
+clrscr();
+
+printf('Matricea introdusa a fost:
+');
+for(i=0;i
+for(j=0;j
+printf(' %5d 'a);
+printf('
+');
+}
+
+
+printf('
+Elementele minime indexate de pe fiecare linie a matricii sunt:
+');
+
+for (i=0;i
+printf(' v<%d>= %d
+'iv);
+
+getch();
+}
+
+
+29. Se da o matrice patratica (linii=coloane). Sa se afisheze elementele de pe diagonala principala.
+
+
+#include
+#include
+
+void main(){
+int m<10><10>ijlc;
+
+clrscr();
+
+printf('
+Introducetzi numarul de linii si coloane l=c= ');
+scanf('%d'&l);
+c=l;
+
+clrscr();
+
+printf('
+Introducetzi elementele matricei:
+');
+for(i=0;i
+for(j=0;j
+printf(' M<%d><%d>:'ij);
+scanf('%d'&m);
+}
+
+clrscr();
+
+printf('
+Matricea introdusa:
+');
+for(i=0;i
+for(j=0;j
+printf('%5d 'm);
+printf('
+
+);
+}
+
+printf('
+Elementele de pe diagonala principala sunt:
+');
+for (i=0;i
+for (j=0;j
+if (i==j)
+printf(' %5d'm);
+
+getch();
+}
+
+
+30. Se da o matrice patratica (linii=coloane). Sa se afisheze elementele situate sub diagonala principala inclusiv diagonala principala.
+
+
+#include
+#include
+
+void main(){
+int m<10><10>ijlc;
+
+clrscr();
+
+printf('
+Introducetzi numarul de linii si coloane l=c= ');
+scanf('%d'&l);
+c=l;
+
+clrscr();
+
+printf('
+Introducetzi elementele matricei:
+');
+for(i=0;i
+for(j=0;j
+printf(' M<%d><%d>= 'ij);
+scanf('%d'&m);
+}
+
+clrscr();
+
+printf('
+Matricea introdusa:
+');
+for(i=0;i
+for(j=0;j
+printf('%5d 'm);
+printf('
+');
+}
+
+printf('
+Elementele de sub diagonala principala sunt:
+');
+for (i=0;i
+for (j=0;j<=i;j++)
+printf(' %5d'm);
+printf('
+');
+}
+
+getch();
+}
+
+
+31. Se da o matrice patratica (linii=coloane). Sa se afisheze elementele situate deasupra diagonalei principale inclusiv diagonala principala.
+
+
+#include
+#include
+
+void main(){
+       int m<10><10>ijlc;
+
+       clrscr();
+
+       printf('
+Introducetzi numarul de linii si coloane l=c= ');
+       scanf('%d'&l);
+       c=l;
+
+       clrscr();
+
+       printf('
+Introducetzi elementele matricei:
+');
+       for(i=0;i
+               for(j=0;j
+                       printf(' M<%d><%d>= 'ij);
+                       scanf('%d'&m);
+               }
+
+       clrscr();
+
+       printf('
+Matricea introdusa:
+');
+       for(i=0;i
+               for(j=0;j
+                       printf('%5d 'm);
+               printf('
+');
+       }
+
+       printf('
+Elementele situate deasupra diagonalei principale sunt:
+');
+
+       for (i=0;i
+               for (j=i;j
+                       printf(' %5d'm);
+
+       getch();
+}
+
+
+32. Se da structura elev care contzine numele prenumele varsta shi media unui elev. Sa se faca un program care sa afisheze o grupa de maxim 30 elevi in ordine alfabetica shi in ordinea mediilor. Media se va lua de tip intreg pentru ca daca o iau de tip float la mine pe calculator da eroare.
+
+
+#include
+#include
+#include
+
+struct elev{
+char nume<20>;
+char prenume<30>;
+int varsta;
+int media;
+}tab<30>;
+
+void main(){
+int niinter;
+struct elev e;
+
+clrscr();
+
+printf('Introducetzi numarul elevilor (n<30): ');
+scanf('%d'&n);
+
+for (i=0;i
+printf('
+Introducetzi numele elevului %d: 'i);
+scanf('%s'&tab.nume);
+printf('Introducetzi prenumele elevului %d: 'i);
+scanf('%s'&tab.prenume);
+printf('Introducetzi varsta elevului %d: 'i);
+scanf('%d'&tab.varsta);
+printf('Introducetzi media elevului %d: 'i);
+scanf('%d'&tab.media);
+}
+
+/*Ordonarea alfabetica prin metoda interschimbarii (bulelor)*/
+do{
+inter=0;
+for (i=0;i
+if (stricmp(tab.numetab.nume)>0){
+e=tab;
+tab=tab;
+tab=e;
+inter=1;
+
+}
+}while(inter);
+
+clrscr();
+printf('Afisharea elevilor in ordine alfabetica
+Dupa afisharea unui elev se apasa o tasta.
+');
+
+for (i=0;i
+printf('
+%s
+'tab.nume);
+printf('%s
+'tab.prenume);
+printf('Varsta %d ani
+'tab.varsta);
+printf('Media %d
+'tab.media);
+getch();
+}
+
+/*Ordonare descrescator dupa medii prin metoda interschimbarii (bulelor)*/
+do{
+inter=0;
+for (i=0;i
+if (tab.media.media){
+e=tab;
+tab=tab;
+tab=e;
+inter=1;
+
+}
+}while(inter);
+
+clrscr();
+printf('Afisharea elevilor in ordinea descrescatoare a mediilor
+Dupa afisharea unui elev se apasa o tasta.
+');
+
+for (i=0;i
+printf('
+%s
+'tab.nume);
+printf('%s
+'tab.prenume);
+printf('Varsta %d ani
+'tab.varsta);
+printf('Media %d
+'tab.media);
+getch();
+}
+
+}
+
+
+
+33. Se citeshte de la tastatura o data alcatuita din zi luna an. Sa se afisheze numarul de zile trecute din acel an.
+
+
+#include
+#include
+
+struct data{
+int zla;
+}d;
+
+int zilele(struct data d){
+int zi;
+zi=d.z;
+switch(d.l-1) {
+case 11:zi+=30;
+case 10:zi+=31;
+case 9:zi+=30;
+case 8:zi+=31;
+case 7:zi+=31;
+case 6:zi+=30;
+case 5:zi+=31;
+case 4:zi+=30;
+case 3:zi+=31;
+case 2:zi+=28;
+case 1:zi+=31;
+}
+if (d.l>2 && d.a%4==0)
+zi+=1;
+return zi;
+}
+
+void main() {
+clrscr();
+printf('Va rog sa introducetzi o data valida.
+');
+
+printf('Introducetzi ziua:');
+scanf('%d'&d.z);
+printf('Introducetzi luna:');
+scanf('%d'&d.l);
+printf('Introducetzi anul:');
+scanf('%d'&d.a);
+printf('
+De la inceputul anului au trecut %d zile.'zilele(d));
+getch();
+}
+
+
+34. Exemple de folosire a pointerilor.
+
+
+#include
+#include
+
+void main(){
+int *p1*p2ab;
+
+clrscr();
+
+a=5;
+p1=&a;
+p2=p1;
+b=*p1;
+printf(' Valoarea de la adresa %p este p2= %d'p2*p2);
+printf('
+b= %d'b);
+getch();
+}
+
+
+35. Afisharea pe ecran a 10 poineri cu valori neinitzializate.
+
+
+#include
+#include
+
+void main(){
+int i*tab<10>;
+
+clrscr();
+
+for (i=0;i<10;i++)
+printf('
+Adresa %d = %p'itab);
+
+getch();
+}
