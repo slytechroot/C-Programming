@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main(void) {
+    int array[3];        // Define an integer array of size 3
+    int readValue = 0;   // Variable to hold user input
+    int cellNumber = 0;  // Variable to keep track of current index in array
+    int i = 0;           // Loop counter
+
+    // Loop to read 3 values from the user
+    for(i = 0; i < 3; i++) {
+
+        printf("Enter a value: ");    // Prompt the user to enter a value
+        scanf("%d", &readValue);      // Read an integer input from the user
+
+        array[cellNumber] = readValue; // Assign the read value to the current index of the array
+
+        printf("Cell number %d contains %d\n", cellNumber, array[cellNumber]); // Print the current index and its value
+
+        cellNumber = cellNumber + 1;   // Move to the next index for the next iteration
+	    printf("\nThe next cellNumber place is %d\n", cellNumber);
+    }
+
+    return 0; // Exit the program
+}
+#################
+
+Explanation:
+
+    Array Declaration and Initialization:
+        int array[3];: This declares an integer array array with 3 elements. Arrays in C are zero-indexed, so valid indices for this array are 0, 1, and 2.
+
+    Variables:
+        int readValue = 0;: This variable is used to store the integer value entered by the user.
+        int cellNumber = 0;: This variable keeps track of the current index in the array where the user input will be stored.
+        int i = 0;: This is a loop counter variable used in the for loop.
+
+    Loop (for loop):
+        for(i = 0; i < 3; i++) {: This loop runs 3 times (i starts from 0 and increments until i is 2), allowing the user to input 3 values into the array.
+
+    User Input and Array Assignment:
+        printf("Enter a value: ");: Displays a prompt for the user to enter a value.
+        scanf("%d", &readValue);: Reads an integer input from the user and stores it in readValue.
+        array[cellNumber] = readValue;: Assigns the value in readValue to the current index cellNumber of the array.
+        printf("Cell number %d contains %d\n", cellNumber, array[cellNumber]);: Prints the index (cellNumber) and the corresponding value stored in the array.
+
+    Index Increment:
+        cellNumber = cellNumber + 1;: Increments cellNumber so that the next input from the user will be stored in the next index of the array in the next iteration of the loop.
+
+    End of Program:
+        return 0;: Indicates successful completion of the main function.
+
+Summary:
+
+This program prompts the user to enter 3 integer values, stores each value in consecutive elements of an array (array), and then prints each index and its corresponding value. It demonstrates basic usage of arrays, loops (for loop), and input/output operations (printf and scanf) in C programming.

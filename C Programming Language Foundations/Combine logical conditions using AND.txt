@@ -1,0 +1,20 @@
+Combine logical conditions using AND
+
+#include <stdio.h>
+int main(void) {
+    int sunny = 1; //1 means it is true, if it's 0 then it's false
+    int vacation = 1; //same here as above.
+//if above we have 0 instead of 1 for either int's, the 'int sunAndVacation' below would yield false
+
+    int sunAndVacation = sunny && vacation;
+    // 1 && 1 : 1,  1 && 0 : 0, 0 && 1 : 0, 0 && 0 : 0
+
+
+
+    if (sunAndVacation) {
+        printf("Yeah!!\n");
+    } else {
+        printf("Too bad!\n");
+    }
+    return 0;
+}

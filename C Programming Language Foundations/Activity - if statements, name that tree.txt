@@ -1,0 +1,114 @@
+Activity: if statements, name that tree
+
+
+As you cross a forest you can't help but admire the nature around you including the many species of trees. Despite your interest, you are a very unskilled botanist and have a lot of trouble identifying different trees. A friend gives you some guidance and you decide to write a program that will give you the name of the tree based on its characteristics.
+
+There are 4 types of trees:
+
+the "Tinuviel" is 5 meters high or less and its leaves are composed of 8 or more leaflets
+
+the "Calaelen" is 10 meters high or more and its leaves are composed of 10 or more leaflets
+
+the "Falarion" is 8 meters high or less and its leaves are composed of 5 or fewer leaflets
+
+the "Dorthonion" is 12 meters tall or more and its leaves are composed of 7 or fewer leaflets
+
+Your program should read the height and the number of leaflets of a given tree (both integers), and should be able to determine and display the name of the corresponding tree.  If the height and number of leaflets does not match any of the tree type descriptions, your program should display "Uncertain".
+Example 1
+Input
+
+12
+12
+
+Output
+
+Calaelen
+
+Example 2
+Input
+
+4
+9
+
+Output
+
+Tinuviel
+
+Example 3
+Input
+
+4
+6
+
+Output
+
+Uncertain
+######################
+
+This task offers 1 hint :
+
+Hint 1 :
+
+Use if, else if, and else to determine the output:
+
+if(something1){
+   // do something
+}
+else if(something2){
+   // do something else
+}
+else{
+   // do something if neither something1 or something2 is true
+}
+
+
+#############
+#include <stdio.h>
+int main() {
+    int height = 0;
+    int nbLeaflets = 0;
+    scanf("%d %d", &height, &nbLeaflets);
+    int tinuviel = height <= 5 && nbLeaflets >= 8;
+    int calaelen = height >= 10 && nbLeaflets >= 10;
+    int falarion = height <= 8 && nbLeaflets <= 5;
+    int dorthonion = height >= 12 && nbLeaflets <= 7;
+    if(tinuviel) {
+        printf("Tinuviel");
+    }
+    if(calaelen){
+        printf("Calaelen");
+    }
+    if(falarion){
+        printf("Falarion");
+    }
+    if(dorthonion){
+        printf("Dorthonion");
+    }
+    if(!tinuviel && !calaelen && !falarion && !dorthonion){
+        printf("Uncertain");
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
