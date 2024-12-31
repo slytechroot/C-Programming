@@ -53,3 +53,25 @@ You must use a loop to read each of the lines!
 
 Warning: Your program must allow David to evaluate any army he gives as an input, not just the one given as an example.
 */
+
+//Class solution
+
+#include <stdio.h>
+
+int main(void) {
+
+    int i, numRobots, height, weight, engine, resistance, sum;
+
+    scanf("%d\n", &numRobots);
+
+    sum = 0;
+
+    for (i = 0; i < numRobots; i++){
+        scanf("%d %d %d %d", &height, &weight, &engine, &resistance);
+        sum = sum + (engine + resistance)*(weight - height);
+    }
+
+    printf("%d", sum);
+
+    return 0;
+}
