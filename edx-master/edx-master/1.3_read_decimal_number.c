@@ -13,3 +13,25 @@ int main(void)
 You may use the fact that one kilometer equals 0.621371 miles. 
 
 */
+
+/*
+Hint 1 :
+Remember you can use the format specifier %.#lf to print a double with # decimal places.
+
+*/
+
+//Class solution
+#include <stdio.h>
+
+int main(void) {
+
+    double distance, milesToKm;
+
+    milesToKm = .621371;
+
+    scanf("%lf", &distance);
+
+    printf("%.6lf", distance * milesToKm);
+
+    return(0);
+}
