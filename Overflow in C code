@@ -1,6 +1,6 @@
-Overflow in C code
+//Overflow in C code
 
- #include<stdio.h>
+#include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 
