@@ -12,3 +12,27 @@ Please write a C-program that reads a decimal number representing a temperature 
 
 Temperature (°F) = Temperature (°C) × 9.0 / 5.0 + 32.0 
 */ 
+
+Hint 1 :
+Remember that the formatting of your output is important - be sure that you are printing one decimal place!
+
+Hint 2 :
+Make sure you are using the double datatype for accurate conversions!
+
+    Class solution ----
+#include <stdio.h>
+
+int main(void) {
+
+    double celsius;
+    double fahrenheit;
+
+    scanf("%lf", &celsius);
+
+    fahrenheit = celsius * 9.0/5.0 + 32;
+
+    printf("%.1lf", fahrenheit);
+
+    return 0;
+}
+
