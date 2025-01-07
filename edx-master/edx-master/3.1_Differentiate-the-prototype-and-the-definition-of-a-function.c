@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sum(int, int); //prototype
+int sum(int, int); //function prototype
 
 int main(void) {
     int a, b;
