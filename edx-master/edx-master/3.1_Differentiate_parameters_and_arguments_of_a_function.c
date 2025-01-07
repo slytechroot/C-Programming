@@ -1,5 +1,5 @@
 #include <stdio.h>
-int sum(int x, int y){ //PARAMETERS
+int sum(int x, int y){ //x and y are PARAMETERS here
     int compute;
     printf("Starting the computation!\n");
     compute = x + y;
@@ -12,7 +12,7 @@ int main(void) {
     printf("Please enter two integers: ");
     scanf("%d%d", &a, &b);
     printf("You entered %d and %d.\n", a, b);
-    result = sum(a, b);//ARGUMENTS
+    result = sum(a, b);//a and b are ARGUMENTS here
     printf("Result of the sum = %d.\n", result);
     return 0;
 }
