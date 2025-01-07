@@ -1,11 +1,7 @@
 #include <stdio.h>
-int sum(int x, int y){ //values are copied into PARAMETERS x and y
-    int compute;
-    printf("Starting the computation!\n");
-    compute = x + y;
-    printf("Finished the computation successfully!\n");
-    return compute;
-}
+
+int sum(int, int); //prototype
+
 int main(void) {
     int a, b;
     int result;
@@ -15,4 +11,11 @@ int main(void) {
     result = sum(a, b); //copies of the VALUES of the ARGUMENTS a and b
     printf("Result of the sum = %d.\n", result);
     return 0;
+}
+int sum(int x, int y){ //values are copied into PARAMETERS x and y
+    int compute;
+    printf("Starting the computation!\n");
+    compute = x + y;
+    printf("Finished the computation successfully!\n");
+    return compute;
 }
