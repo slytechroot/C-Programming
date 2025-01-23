@@ -17,6 +17,8 @@ int main(void)
    printTriangle(nLines, '*');
    printf("\n");
    printRectangle(nLines, nCols, '#');
+
+   printf("\nThe program ended!");
 }
 
 void printLine(int nCols, char pattern)
