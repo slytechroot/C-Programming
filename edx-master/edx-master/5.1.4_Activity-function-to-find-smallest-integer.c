@@ -18,7 +18,7 @@ Warning: You will be graded on your output, so do not include any print statemen
 ###########################
 
 #include <stdio.h>
-
+int min(int,int);
 int min(int a, int b) {
     return (a < b) ? a : b;
 }
