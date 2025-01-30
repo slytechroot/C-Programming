@@ -14,5 +14,6 @@ int main(void){
 int sum(int x, int y){
   int compute;
   compute = x*y;
-  return(compute); //use this return function for the result
+  //use this return function for the result, or you will get a non-void function errror
+  return(compute); 
 }
