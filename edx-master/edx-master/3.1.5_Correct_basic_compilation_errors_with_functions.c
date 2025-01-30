@@ -14,5 +14,5 @@ int main(void){
 int sum(int x, int y){
   int compute;
   compute = x*y;
-  return(compute);
+  return(compute); //use this return function for the result
 }
