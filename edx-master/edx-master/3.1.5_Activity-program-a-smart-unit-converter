@@ -42,3 +42,32 @@ Warning: You will be graded on your output, so do not include any print statemen
 Note
 
 You may submit your solution as many times as you wish. Only your highest score will be kept.
+
+333333333333333
+
+#include <stdio.h>
+
+void convert_and_print(double value, char unit) {
+    if (unit == 'm') {
+        printf("%.6lf ft\n", value * 3.2808);
+    } else if (unit == 'g') {
+        printf("%.6lf lbs\n", value * 0.002205);
+    } else if (unit == 'c') {
+        printf("%.6lf f\n", 32 + (1.8 * value));
+    }
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    for (int i = 0; i < n; i++) {
+        double value;
+        char unit;
+        scanf("%lf %c", &value, &unit);
+        convert_and_print(value, unit);
+    }
+    
+    return 0;
+}
+
