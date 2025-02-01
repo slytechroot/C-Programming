@@ -1,0 +1,56 @@
+Activity: scope of variables
+
+1)
+Suppose you have defined a function add as follows:
+
+int add (int a, int b) 
+{
+	  int sum;
+	  a = 3;
+	  sum = a+b;
+	  return(sum);
+}
+
+In your main program, you have declared integer variables a and b and given them the values a = 12 and b = 5. You then call the function add(a,b).
+
+What is the return value it returns?
+
+###########
+
+2)
+In continuation to the previous question:
+
+What is the value of the variable a in your main program after execution of the function add()?
+
+###########
+3)
+
+#include <stdio.h>
+int funnyadd(int j, int i);
+
+int main(void)
+{
+      int i = 5; 
+      int j = 7;
+      i = funnyadd(i,j);
+      printf("%d", i);
+      return(0);
+}
+
+int funnyadd(int j, int i)
+{
+      int a = 2;
+      return(a*j+i);
+}
+
+What is the value of the variable i that is printed out at the end the program?
+
+
+
+
+
+
+
+
+
+
