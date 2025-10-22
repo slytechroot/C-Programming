@@ -1,0 +1,103 @@
+In C programming, a nested loop is a loop inside another loop. This allows you to iterate over a set of elements in a more complex pattern. The inner loop runs multiple times for each iteration of the outer loop.
+Imagine you want to print five hystericks you would probably do something like this RIGHT?
+printf("*****");
+
+See 'Nested Loops in C.png' image.
+
+NB: The stdio.h header file and the main function should be present in oder for this to be printed
+What if you wanted to print 10 hystericks, you would probably do the same thing.
+Now let’s say you were asked to print 50, 100, or 200 hystericks, you would find out that writing them in a printf statement is very cumbersome and not a good practice.
+Let’s not forget the purpose of loops in c.
+They are used for repetitions or iterations of statements.
+WHAT IS NESTED for LOOP?
+It is a for loop in another for loop.
+This construct is used when you need to perform repetitive tasks in a more complex pattern, involving two or more variables. The syntax for a nested for loop looks like this:
+for (initialization1; condition1; update1) {
+    // Outer loop statements
+
+    for (initialization2; condition2; update2) {
+        // Inner loop statements
+    }
+
+    // More outer loop statements
+}
+
+ 
+Explanation of nested for loop using flowchart
+Take for instance, you want print 5 dollar symbol like this
+$$$$$
+
+You can use a for loop
+#include <stdio.h>
+int main (void)
+ {
+    for(int i = 1; i <= 5; i++)
+    {
+        printf("$");
+     }
+
+     return 0;
+ }
+ 
+
+What if you want to print 30 dollar sign like this
+$ $ $ $ $
+$ $ $ $ $
+$ $ $ $ $
+$ $ $ $ $
+$ $ $ $ $
+$ $ $ $ $
+
+We can do this with nested for loop
+#include <stdio.h>
+int main (void)
+ {
+    for(int i = 1; i <= 6; i++)
+    {
+      for(int j = 1; j < 6; j++)
+       {
+        printf("$ ");
+
+       }
+    
+    printf("\n");
+     }
+
+     return 0;
+ }
+ 
+
+This is how this program works l. The control goes to the outer loop which is i.
+Get Dev Frank’s stories in your inbox
+Join Medium for free to get updates from this writer.
+ 
+The variable i is declared and initialized to 1, with a terminating condition if i is less than or equal to 6 it should enter the outer for loop.
+Inside the outer for loop we have another for loop.
+The variable j was declared and initialized, also with a terminating condition, if j is less than 6, it should enter the loop.
+Entering the inner loop “$ " will be printed when j is 1. It repeats the same thing until j is greater than 5. Then it stops printing the dollar symbol. We now have 5 dollar symbol.
+$ $ $ $ $ 
+
+It comes out of the inner loop and prints the newline character. After that the control goes to the I creme t if the outer loop and increments j to 2.
+It enters the inner loop again and prints the same 5 dollar symbols in a newline. It repeats this until the outer loop condition is false ( I is greater than 6).
+Then 30 dollar symbols will be printed on the console.
+
+  
+  $ $ $ $ $   
+  $ $ $ $ $
+  $ $ $ $ $
+  $ $ $ $ $
+  $ $ $ $ $
+  $ $ $ $ $
+
+KEYPOINTS IN NESTING OF LOOPS
+1.	Nesting can be up to any levels. You can have has many inner loops as you want.
+2.	You can also nest different kinds of loops. A while loop can be nested in a for loop, or a do-while loop in a while loop and vice versa.
+TRY THIS!!!
+Write a program prints pairs of numbers
+Hint
+Use a nested for loop
+It should be like this. You can print more if you want.
+(1, 1) (1, 2) (1, 3)
+(2, 1) (2, 2) (2, 3)
+(3, 1) (3, 2) (3, 3)
+
