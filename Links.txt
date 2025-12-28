@@ -1,2 +1,4 @@
 https://hackmd.io/@pramho05/c_lang#Unit-22-Arrays-for-and-while-loops
 
+https://raw.githubusercontent.com/auspbro/ebook-c/master/The.C.Programming.Language.2Nd.Ed%20Prentice.Hall.Brian.W.Kernighan.and.Dennis.M.Ritchie..pdf
+
